@@ -1,25 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Signin from './pages/Signin';
-import User from './pages/User';
+import Login from './pages/Login';
 
-const App = () => {
-  return(
-    <React.StrictMode>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<Signin />} />
-          <Route path="/" element={<User />} />
-        </Routes>
-      </Router>
-    </React.StrictMode>
-  )
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
-
-
 

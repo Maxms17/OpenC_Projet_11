@@ -7,12 +7,12 @@ const Home = ({ isLoggedIn, logIn, logOut }) => {
     <div>
       {isLoggedIn ? (
         <div>
-          <h1>Bienvenue sur la page d'accueil</h1>
+          <h1>Bienvenue sur la page log in</h1>
           <button onClick={logOut}>Déconnexion</button>
         </div>
       ) : (
         <div>
-          <h1>Veuillez vous connecter la page d'accueil</h1>
+          <h1>Veuillez vous connecter log in</h1>
           <button onClick={logIn}>Connexion</button>
         </div>
       )}
