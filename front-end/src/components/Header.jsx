@@ -1,4 +1,4 @@
-// Header.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ function Header({ isAuthenticated }) {
               <Link to="/profile">Profil</Link>
             </li>
             <li>
-              <Link to="/logout">Déconnexion</Link> {/* Ajoutez une route de déconnexion si nécessaire */}
+              <Link to="/logout">Déconnexion</Link>
             </li>
           </>
         ) : (

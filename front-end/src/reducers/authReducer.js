@@ -1,4 +1,4 @@
-// authReducer.js
+
 import { combineReducers } from 'redux';
 import authReducer from '../actions/authActions';
 

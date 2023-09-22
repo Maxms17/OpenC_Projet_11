@@ -1,4 +1,4 @@
-// App.js
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
