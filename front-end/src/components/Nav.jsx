@@ -1,11 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../css/main.css';
+import { logout } from '../actions/authActions';
 import logo from '../img/argentBankLogo.png';
 
 function Nav() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('token');
+  };
 
   return (
     <nav className="main-nav">
@@ -20,7 +29,7 @@ function Nav() {
               <i className="fa fa-user-circle"></i>
               NOM
             </Link>
-            <Link to="/login" className="main-nav-item">
+            <Link to="/login" className="main-nav-item" onClick={handleLogout}>
               <i className="fa fa-sign-out"></i>
               Sign Out
             </Link>

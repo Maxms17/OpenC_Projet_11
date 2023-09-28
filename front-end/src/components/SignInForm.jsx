@@ -9,11 +9,11 @@ import '../css/main.css';
 const SignInForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -23,14 +23,32 @@ const SignInForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     
-    const success = await dispatch(login({ username, password }));
+    try {
+      const response = await fetch('http://localhost:3001/api/v1/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    if (success) {
-      //localStorage.setItem('token', 'votre_token');
-      navigate('/profile');
-    } else {
-      console.log("Probleme de username ou password");
+      if (response.ok) {
+        const responseData = await response.json();
+        const token = responseData.body.token; 
+        if (token) {
+          localStorage.setItem('token', token);
+          dispatch(login(responseData)); 
+          navigate('/profile');
+        } else {
+          console.error('Token non trouvé dans la réponse.');
+        }
+      } else {
+        console.error('Échec de la requête :', response.status);
+      }
+    } catch (error) {
+      console.error('Erreur lors de la requête :', error);
     }
+
   };
 
   return (
@@ -39,13 +57,13 @@ const SignInForm = () => {
       <h1>Sign In</h1>
       <form onSubmit={handleFormSubmit}>
         <div className="input-wrapper">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={handleUsernameChange}
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
           />
         </div>
         <div className="input-wrapper">
