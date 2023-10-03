@@ -8,11 +8,15 @@ import '../css/main.css';
 const Dashboard = () => {
   const userName = useSelector((state) => state.user.userName);
 
+  const handleUsernameChange = (event) => {
+    console.log('Username');
+  };
+
   return (
     <main className="main bg-dark">
       <div className="header">
         <h1>Welcome back<br />{userName}!</h1>
-        <button className="edit-button">Edit Name</button>
+        <button className="edit-button" onClick={handleUsernameChange}>Edit Name</button>
       </div>
       <h2 className="sr-only">Accounts</h2>
       <Account
