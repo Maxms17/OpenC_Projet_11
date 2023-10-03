@@ -6,13 +6,12 @@ import Account from './Account';
 import '../css/main.css';
 
 const Dashboard = () => {
-  const lastName = useSelector((state) => state.user.lasttName);
-  const email = useSelector((state) => state.user.email);
+  const userName = useSelector((state) => state.user.userName);
 
   return (
     <main className="main bg-dark">
       <div className="header">
-        <h1>Welcome back<br />{lastName} {email}!</h1>
+        <h1>Welcome back<br />{userName}!</h1>
         <button className="edit-button">Edit Name</button>
       </div>
       <h2 className="sr-only">Accounts</h2>

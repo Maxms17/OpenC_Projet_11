@@ -15,8 +15,7 @@ function Nav() {
     dispatch(logout());
   };
   
-  const lastName = useSelector((state) => state.user.lastName);
-  const email = useSelector((state) => state.user.email);
+  const userName = useSelector((state) => state.user.userName);
 
   return (
     <nav className="main-nav">
@@ -29,7 +28,7 @@ function Nav() {
           <>
             <Link to="/profile" className="main-nav-item">
               <i className="fa fa-user-circle"></i>
-              {lastName} {email}
+              {userName}
             </Link>
             <Link to="/login" className="main-nav-item" onClick={handleLogout}>
               <i className="fa fa-sign-out"></i>
