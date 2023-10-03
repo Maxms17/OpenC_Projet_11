@@ -8,7 +8,7 @@ import '../css/main.css';
 const Dashboard = () => {
   const userName = useSelector((state) => state.user.userName);
 
-  const handleUsernameChange = (event) => {
+  const handleUsernameChange = () => {
     console.log('Username');
   };
 
