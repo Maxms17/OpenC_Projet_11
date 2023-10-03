@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
 import { login } from '../actions/authActions';
-
+import { setUser } from '../actions/userActions';
 import '../css/main.css';
 
 const SignInForm = () => {
@@ -11,6 +10,8 @@ const SignInForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -22,33 +23,18 @@ const SignInForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
-    try {
-      const response = await fetch('http://localhost:3001/api/v1/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
 
-      if (response.ok) {
-        const responseData = await response.json();
-        const token = responseData.body.token; 
-        if (token) {
-          localStorage.setItem('token', token);
-          dispatch(login(responseData)); 
-          navigate('/profile');
-        } else {
-          console.error('Token non trouvé dans la réponse.');
-        }
+    if (!isAuthenticated) {
+      if (email && password) {
+        dispatch(login()); 
+        dispatch(setUser({ email, password })); 
       } else {
-        console.error('Échec de la requête :', response.status);
+        console.error('Erreur connexion');
+        return; 
       }
-    } catch (error) {
-      console.error('Erreur lors de la requête :', error);
     }
 
+    navigate('/profile');
   };
 
   return (

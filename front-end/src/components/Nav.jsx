@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -14,22 +13,10 @@ function Nav() {
 
   const handleLogout = () => {
     dispatch(logout());
-    localStorage.removeItem('token');
   };
   
-  const [user, setUser] = useState({ firstName: '', lastName: '' });
-
-  useEffect(() => {
-    fetch('http://localhost:3001/api/v1/user/signup')
-      .then(response => response.json())
-      .then(data => {
-        const { firstName, lastName } = data;
-        setUser({ firstName, lastName });
-      })
-      .catch(error => {
-        console.error('Erreur lors de la récupération des informations de l\'utilisateur :', error);
-      });
-  }, []);
+  const lastName = useSelector((state) => state.user.lastName);
+  const email = useSelector((state) => state.user.email);
 
   return (
     <nav className="main-nav">
@@ -42,7 +29,7 @@ function Nav() {
           <>
             <Link to="/profile" className="main-nav-item">
               <i className="fa fa-user-circle"></i>
-              {user.firstName} {user.lastName}
+              {lastName} {email}
             </Link>
             <Link to="/login" className="main-nav-item" onClick={handleLogout}>
               <i className="fa fa-sign-out"></i>
