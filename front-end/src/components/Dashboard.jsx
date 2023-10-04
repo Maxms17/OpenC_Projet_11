@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { setUser } from '../actions/userActions';
 import Account from './Account';
 import '../css/main.css';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const userName = useSelector((state) => state.user.userName);
   const firstName = useSelector((state) => state.user.firstName);
   const lastName = useSelector((state) => state.user.lastName);
@@ -24,9 +22,9 @@ const Dashboard = () => {
   };
 
   const handleSaveUsername = async () => {
-    console.log("first",firstName);
-    console.log("last",lastName);
-    console.log("token",token.payload.token);
+    //console.log("first",firstName);
+    //console.log("last",lastName);
+    //console.log("token",token.payload.token);
 
     try {
       const nameResponse = await fetch('http://localhost:3001/api/v1/user/profile', {
