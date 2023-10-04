@@ -35,8 +35,8 @@ const SignInForm = () => {
 
         if (response.ok) {
           const data = await response.json();
-          dispatch(login());
           const token = data.body.token;
+          dispatch(login({token}));
           try {
             const utilisateurResponse = await fetch('http://localhost:3001/api/v1/user/profile', {
               method: 'POST',
@@ -50,15 +50,14 @@ const SignInForm = () => {
 
               const utilisateurData = await utilisateurResponse.json();
               setUtilisateur(utilisateurData);
-              console.log('utilisateur',utilisateurData)
+              //console.log('utilisateur',utilisateurData)
               
-              dispatch(setUser(utilisateurData));
+              //dispatch(setUser(utilisateurData));
               dispatch(setUser({
                 email: utilisateurData.body.email,
                 userName: utilisateurData.body.userName, 
                 firstName: utilisateurData.body.firstName,
                 lastName: utilisateurData.body.lastName,
-                token: utilisateurData.body.token,
               }));
 
               navigate('/profile');

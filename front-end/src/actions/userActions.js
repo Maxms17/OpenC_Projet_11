@@ -6,7 +6,6 @@ const initialState = {
   firstName: '',
   lastName: '',
   userName: '',
-  token: '',
 };
 
 const userSlice = createSlice({
@@ -18,7 +17,6 @@ const userSlice = createSlice({
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
       state.userName = action.payload.userName;
-      state.token = action.payload.token;
     },
   },
 });
