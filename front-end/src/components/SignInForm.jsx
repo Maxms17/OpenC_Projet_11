@@ -58,6 +58,7 @@ const SignInForm = () => {
                 userName: utilisateurData.body.userName, 
                 firstName: utilisateurData.body.firstName,
                 lastName: utilisateurData.body.lastName,
+                token: utilisateurData.body.token,
               }));
 
               navigate('/profile');
