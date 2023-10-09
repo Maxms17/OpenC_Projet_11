@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../css/main.css';
 import { logout } from '../actions/authActions';
-import logo from '../img/argentBankLogo.png';
+import logo from '../img/argentBankLogo.webp';
 
 function Nav() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
