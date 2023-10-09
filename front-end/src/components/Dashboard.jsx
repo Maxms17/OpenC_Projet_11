@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../actions/userActions';
+import { UpdateUserName } from '../actions/userActions';
 import Account from './Account';
 import '../css/main.css';
 
@@ -41,11 +41,8 @@ const Dashboard = () => {
       if (nameResponse.ok) {
         const utilisateurData = await nameResponse.json();
 
-        dispatch(setUser({
-          email: utilisateurData.body.email,
+        dispatch(UpdateUserName({
           userName: utilisateurData.body.userName,
-          firstName: utilisateurData.body.firstName,
-          lastName: utilisateurData.body.lastName,
         }));
       } else {
         console.error('Erreur lors de la mise à jour du nom d\'utilisateur. Statut de la réponse:', nameResponse.status);
