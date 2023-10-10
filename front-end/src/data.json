@@ -1,0 +1,103 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "data": [
+        {
+          "id_donné": 1,
+          "date": "2020-02-27",
+          "description": "Paiement carte de crédit",
+          "amount": -100.00,
+          "balance": "Banque XYZ"
+        },
+        {
+          "id_donné": 2,
+          "date": "2020-02-27",
+          "description": "Dépôt de salaire",
+          "amount": 2500.00,
+          "balance": "Mon employeur"
+        },
+        {
+          "id_donné": 3,
+          "date": "2020-02-24",
+          "description": "Achat en ligne",
+          "amount": -45.99,
+          "balance": "Magasin en ligne ABC"
+        },
+        {
+          "id_donné": 4,
+          "date": "2020-01-26",
+          "description": "Retrait en espèces",
+          "amount": -200.00,
+          "balance": "Distributeur automatique"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "data": [
+        {
+          "id_donné": 1,
+          "date": "2020-02-27",
+          "description": "Paiement carte de crédit",
+          "amount": -100.00,
+          "balance": "test 2"
+        },
+        {
+          "id_donné": 2,
+          "date": "2020-02-27",
+          "description": "Dépôt de salaire",
+          "amount": 2500.00,
+          "balance": "Mon employeur"
+        },
+        {
+          "id_donné": 3,
+          "date": "2020-02-24",
+          "description": "Achat en ligne",
+          "amount": -45.99,
+          "balance": "Magasin en ligne ABC"
+        },
+        {
+          "id_donné": 4,
+          "date": "2020-01-26",
+          "description": "Retrait en espèces",
+          "amount": -200.00,
+          "balance": "Distributeur automatique"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "data": [
+        {
+          "id_donné": 1,
+          "date": "2020-02-27",
+          "description": "Paiement carte de crédit",
+          "amount": -100.00,
+          "balance": "test 3"
+        },
+        {
+          "id_donné": 2,
+          "date": "2020-02-27",
+          "description": "Dépôt de salaire",
+          "amount": 2500.00,
+          "balance": "Mon employeur"
+        },
+        {
+          "id_donné": 3,
+          "date": "2020-02-24",
+          "description": "Achat en ligne",
+          "amount": -45.99,
+          "balance": "Magasin en ligne ABC"
+        },
+        {
+          "id_donné": 4,
+          "date": "2020-01-26",
+          "description": "Retrait en espèces",
+          "amount": -200.00,
+          "balance": "Distributeur automatique"
+        }
+      ]
+    }
+  ]
+}

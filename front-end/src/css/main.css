@@ -227,6 +227,7 @@ body {
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .account-amount {
@@ -257,6 +258,32 @@ body {
   color: #fff;
   font-weight: bold;
   padding: 10px;
+}
+
+.transact_info{
+  background-color: #fff;
+  font-weight: bold;
+  color: #000;
+  margin-left: 10%;
+  width: 80%;
+  display: flex; 
+  justify-content: space-around;
+}
+
+.date{
+  width: 25%;
+}
+
+.description{
+  width: 25%;
+}
+
+.amount{
+  width: 25%;
+}
+
+.balance{
+  width: 25%;
 }
 
 .header {
