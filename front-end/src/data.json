@@ -8,28 +8,40 @@
           "date": "2020-02-27",
           "description": "Paiement carte de crédit",
           "amount": -100.00,
-          "balance": "Banque X"
+          "balance": "Banque X",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 2,
           "date": "2020-02-27",
           "description": "Dépôt de salaire",
           "amount": 2500.00,
-          "balance": "Mon employeur"
+          "balance": "Mon employeur",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 3,
           "date": "2020-02-24",
           "description": "Achat en ligne",
           "amount": -45.99,
-          "balance": "Magasin en ligne ABC"
+          "balance": "Magasin en ligne ABC",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 4,
           "date": "2020-01-26",
           "description": "Retrait en espèces",
           "amount": -200.00,
-          "balance": "Distributeur automatique"
+          "balance": "Distributeur automatique",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         }
       ]
     },
@@ -41,28 +53,40 @@
           "date": "2020-02-27",
           "description": "Paiement carte de crédit",
           "amount": -100.00,
-          "balance": "Banque Y"
+          "balance": "Banque Y",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 2,
           "date": "2020-02-27",
           "description": "Dépôt de salaire",
           "amount": 2500.00,
-          "balance": "Mon employeur"
+          "balance": "Mon employeur",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 3,
           "date": "2020-02-24",
           "description": "Achat en ligne",
           "amount": -45.99,
-          "balance": "Magasin en ligne ABC"
+          "balance": "Magasin en ligne ABC",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 4,
           "date": "2020-01-26",
           "description": "Retrait en espèces",
           "amount": -200.00,
-          "balance": "Distributeur automatique"
+          "balance": "Distributeur automatique",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         }
       ]
     },
@@ -74,28 +98,40 @@
           "date": "2020-02-27",
           "description": "Paiement carte de crédit",
           "amount": -100.00,
-          "balance": "Banque Z"
+          "balance": "Banque Z",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 2,
           "date": "2020-02-27",
           "description": "Dépôt de salaire",
           "amount": 2500.00,
-          "balance": "Mon employeur"
+          "balance": "Mon employeur",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 3,
           "date": "2020-02-24",
           "description": "Achat en ligne",
           "amount": -45.99,
-          "balance": "Magasin en ligne ABC"
+          "balance": "Magasin en ligne ABC",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         },
         {
           "id_donné": 4,
           "date": "2020-01-26",
           "description": "Retrait en espèces",
           "amount": -200.00,
-          "balance": "Distributeur automatique"
+          "balance": "Distributeur automatique",
+          "type": "Electonic",
+          "Category": "Food",
+          "Note": "lorem ipsum"
         }
       ]
     }
