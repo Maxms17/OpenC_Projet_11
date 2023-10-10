@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import jsonData from '../data.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'; 
 import '../css/main.css';
 
 function Dropdown({ id }) {
-
   const targetTransaction = jsonData.transactions.find(
     transaction => transaction.id === id
   );
+
+  const [showDetails, setShowDetails] = useState([]);
+
+  const toggleDetails = (index) => {
+    const newShowDetails = [...showDetails];
+    newShowDetails[index] = !newShowDetails[index];
+    setShowDetails(newShowDetails);
+  };
 
   return (
     <div>
@@ -22,6 +31,9 @@ function Dropdown({ id }) {
         </div>
         <div className='balance'>
           <p>Balance</p>
+        </div>
+        <div className='fleche'>
+          
         </div>
       </div>
 
@@ -39,6 +51,9 @@ function Dropdown({ id }) {
             </div>
             <div className='balance'>
               <p>{transactionData.balance}</p>
+            </div>
+            <div className='fleche' onClick={() => toggleDetails(index)}>
+              <FontAwesomeIcon icon={showDetails[index] ? faChevronUp : faChevronDown} />
             </div>
           </div>
         ))

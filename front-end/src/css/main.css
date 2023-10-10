@@ -271,19 +271,25 @@ body {
 }
 
 .date{
-  width: 25%;
+  width: 20%;
 }
 
 .description{
-  width: 25%;
+  width: 20%;
 }
 
 .amount{
-  width: 25%;
+  width: 20%;
 }
 
 .balance{
-  width: 25%;
+  width: 20%;
+}
+
+.fleche{
+  width:  20%;
+  text-align: center;
+  align-items: center;
 }
 
 .header {
