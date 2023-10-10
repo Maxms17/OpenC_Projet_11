@@ -1,14 +1,14 @@
 {
   "transactions": [
     {
-      "id": 1,
+      "id": "1",
       "data": [
         {
           "id_donné": 1,
           "date": "2020-02-27",
           "description": "Paiement carte de crédit",
           "amount": -100.00,
-          "balance": "Banque XYZ"
+          "balance": "Banque X"
         },
         {
           "id_donné": 2,
@@ -34,14 +34,14 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "data": [
         {
           "id_donné": 1,
           "date": "2020-02-27",
           "description": "Paiement carte de crédit",
           "amount": -100.00,
-          "balance": "test 2"
+          "balance": "Banque Y"
         },
         {
           "id_donné": 2,
@@ -67,14 +67,14 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "data": [
         {
           "id_donné": 1,
           "date": "2020-02-27",
           "description": "Paiement carte de crédit",
           "amount": -100.00,
-          "balance": "test 3"
+          "balance": "Banque Z"
         },
         {
           "id_donné": 2,

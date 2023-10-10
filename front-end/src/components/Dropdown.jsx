@@ -4,17 +4,9 @@ import '../css/main.css';
 
 function Dropdown({ id }) {
 
-  const transactionObject = jsonData.transactions.find(transaction => {
-    console.log("Transaction ID:", id);
-    console.log("Transaction data:", transaction);
-    return transaction.data.some(dataItem => dataItem.id === id);
-  });
-
-  if (!transactionObject) {
-    return <div>Aucune transaction trouvée avec cet ID.</div>;
-  }
-
-  const transactionsData = transactionObject.data;
+  const targetTransaction = jsonData.transactions.find(
+    transaction => transaction.id === id
+  );
 
   return (
     <div>
@@ -33,22 +25,26 @@ function Dropdown({ id }) {
         </div>
       </div>
 
-      {transactionsData.map((transaction, index) => (
-        <div className='transact_info' key={index}>
-          <div className='date'>
-            <p>{transaction.date}</p>
+      {targetTransaction ? (
+        targetTransaction.data.map((transactionData, index) => (
+          <div className='transact_info' key={index}>
+            <div className='date'>
+              <p>{transactionData.date}</p>
+            </div>
+            <div className='description'>
+              <p>{transactionData.description}</p>
+            </div>
+            <div className='amount'>
+              <p>{transactionData.amount}</p>
+            </div>
+            <div className='balance'>
+              <p>{transactionData.balance}</p>
+            </div>
           </div>
-          <div className='description'>
-            <p>{transaction.description}</p>
-          </div>
-          <div className='amount'>
-            <p>{transaction.amount}</p>
-          </div>
-          <div className='balance'>
-            <p>{transaction.balance}</p>
-          </div>
-        </div>
-      ))}
+        ))
+      ) : (
+        <p>La transaction avec l'ID {id} n'a pas été trouvée.</p>
+      )}
     </div>
   );
 }
